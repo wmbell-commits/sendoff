@@ -24,35 +24,62 @@
       </div>
     </section>
 
-    <section class="pitch-slide slide-two" aria-label="Slide 2: Memorable brand story">
-      <div class="memory-split"><img src="../chuck-night.jpeg" alt="Tonight"><img src="../chuck-tomorrow.jpeg" alt="Tomorrow"></div>
-      <div class="slide-shade soft"></div>
-      <div class="slide-content bottom-copy">
+    <section class="pitch-slide slide-two" id="memorySlide" aria-label="Slide 2: The SendOff story">
+      <img class="memory-bg active" id="memoryNight" src="../chuck-night.jpeg" alt="A night to remember">
+      <img class="memory-bg" id="memoryMorning" src="../chuck-tomorrow.jpeg" alt="The morning and life after the night out">
+      <div class="memory-overlay"></div>
+      <div class="memory-story" id="memoryStory">
         <p class="pitch-kicker">SLIDE 2 · THE MEMORY</p>
         <h2>The night is only<br><span>half the story.</span></h2>
-        <p class="pitch-lead">SendOff connects the fun people remember with the tomorrow they still want to show up for.</p>
-        <div class="signature-line"><span>GOOD NIGHTS.</span><strong>BETTER MORNINGS.</strong></div>
+        <div class="story-panel active" data-step="0">
+          <span class="story-stage blue">STAGE 1 · KEEP GOING</span>
+          <h3>Imagine it's 11:45 PM.</h3>
+          <p>Wedding. Concert. Ball game. Birthday. Casino. Your favorite bar. The night is exploding, the crew is locked in, and nobody is ready for it to end.</p>
+          <blockquote>“Let's keep it going.”</blockquote>
+        </div>
+        <div class="story-panel" data-step="1">
+          <span class="story-stage">STAGE 2 · ROUND TWO</span>
+          <h3>You're in deep now.</h3>
+          <p>You already know this is becoming one of those nights everybody talks about tomorrow. Before the next stop or the afterparty, somebody slides the crew a Round Two.</p>
+          <blockquote>Hydrate. Reset. Keep the memory going.</blockquote>
+        </div>
+        <div class="story-panel" data-step="2">
+          <span class="story-stage orange">STAGE 3 · THE SENDOFF</span>
+          <h3>Then you hear it: “Last call.”</h3>
+          <p>You look at the crew. Everybody is thinking the same thing.</p>
+          <blockquote>“Time to SendOff.”</blockquote>
+          <p class="story-small">The bartender hits the cooler. Everybody gets one. Bottles up. Pictures happen. People toast. The end of the night becomes its own ritual.</p>
+        </div>
+        <div class="story-panel morning-panel" data-step="3">
+          <span class="story-stage sunrise">TOMORROW</span>
+          <h3>Because the night was only half the story.</h3>
+          <p>Tomorrow still has family, friends, work, golf, the lake, breakfast—and the rest of your life waiting for you.</p>
+          <div class="signature-line"><span>GOOD NIGHTS.</span><strong>BETTER MORNINGS.</strong></div>
+        </div>
+        <button class="story-next" id="storyNext" type="button"><span id="storyNextText">TAP: ROUND TWO</span><b>→</b></button>
       </div>
     </section>
 
     <section class="pitch-slide slide-three" aria-label="Slide 3: Business opportunity">
-      <div class="numbers-layout">
-        <div class="numbers-copy">
+      <div class="business-card">
+        <div class="business-head">
           <p class="pitch-kicker">SLIDE 3 · THE BUSINESS</p>
-          <h2>Put your bar's numbers<br><span>into the idea.</span></h2>
-          <p>SendOff creates up to three natural beverage moments in the same customer journey. Use the calculator below for an illustrative retail-sales scenario.</p>
-          <div class="founder-chip"><img src="../sendoff-logo.png" alt="SendOff"><div><b>Founder-led by Chuck Bell</b><span>Sales · Retail · Hospitality · Events</span></div></div>
+          <h2>Right product.<br><span>Right moment.</span></h2>
+          <p>SendOff is built to own a new occasion inside a place where beverage brands are already discovered.</p>
         </div>
-        <div class="calc-card">
-          <label>Guests per night <input id="guests" type="number" min="0" value="100" inputmode="numeric"></label>
-          <label>SendOff adoption <span><input id="conversion" type="number" min="0" max="100" value="20" inputmode="decimal">%</span></label>
-          <label>Avg. bottles per buyer <input id="bottles" type="number" min="0" step="0.1" value="1.5" inputmode="decimal"></label>
-          <label>Retail price / bottle <span>$<input id="price" type="number" min="0" step="0.25" value="5" inputmode="decimal"></span></label>
-          <label>Open nights / month <input id="nights" type="number" min="0" max="31" value="30" inputmode="numeric"></label>
-          <div class="result-grid"><div><span>Projected bottles / night</span><strong id="nightBottles">30</strong></div><div><span>Illustrative sales / night</span><strong id="nightSales">$150</strong></div><div class="full"><span>Illustrative monthly retail sales</span><strong id="monthSales">$4,500</strong></div></div>
-          <small>Illustrative scenario only—not a sales forecast or profit estimate. Actual adoption, pricing, costs and margins will vary.</small>
+        <div class="market-grid">
+          <div><strong>3</strong><span>natural purchase moments</span><small>Keep Going · Round Two · SendOff</small></div>
+          <div><strong>73%</strong><span>trial can travel beyond the bar</span><small>Gen Z + regional craft drinkers say bar/restaurant trial makes them more likely to buy in-store.</small></div>
+          <div><strong>1 in 7</strong><span>already tried functional drinks on-premise</span><small>Functional-adjacent beverages are already entering the going-out occasion.</small></div>
+          <div><strong>2×</strong><span>the market growth rate</span><small>NIQ forecasts U.S. off-premise functional beverages to grow at double the overall market rate.</small></div>
+        </div>
+        <div class="venue-math"><b>ILLUSTRATIVE VENUE MATH</b><span>100 guests × 20% buyers × 1.5 bottles × $5 = <strong>$150/night</strong> · <strong>$4,500/month</strong> at 30 nights</span><small>Illustration only—not a forecast. Actual pricing, adoption, costs and margins vary.</small></div>
+        <div class="founder-row">
+          <img src="../sendoff-logo.png" alt="SendOff">
+          <div><b>Founder-led by Chuck Bell</b><span>Sales · Hospitality · Restaurant Operations · Events · Brand Building</span></div>
           <a class="pitch-cta" href="mailto:charles@sendoffdrink.com?subject=I%20Want%20to%20Pilot%20SendOff%20at%20My%20Bar">LET'S TEST SENDOFF HERE</a>
         </div>
+        <p class="source-note">Market context: NielsenIQ, 2026 U.S. On-Premise / beverage trend reporting.</p>
       </div>
     </section>
   </main>
@@ -61,11 +88,26 @@
     const deck=document.getElementById('deck'), dots=[...document.querySelectorAll('.pitch-dots i')];
     const updateDots=()=>{const i=Math.round(deck.scrollLeft/deck.clientWidth);dots.forEach((d,n)=>d.classList.toggle('active',n===i));};
     deck.addEventListener('scroll',()=>requestAnimationFrame(updateDots),{passive:true});
-    const ids=['guests','conversion','bottles','price','nights'];
-    const fmt=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n);
-    const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
-    function calc(){const g=+guests.value||0,c=(+conversion.value||0)/100,b=+bottles.value||0,p=+price.value||0,n=+nights.value||0;const qty=g*c*b;nightBottles.textContent=fmt(qty);nightSales.textContent=money(qty*p);monthSales.textContent=money(qty*p*n)}
-    ids.forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+
+    const storyPanels=[...document.querySelectorAll('.story-panel')];
+    const storyNext=document.getElementById('storyNext');
+    const storyNextText=document.getElementById('storyNextText');
+    const memoryNight=document.getElementById('memoryNight');
+    const memoryMorning=document.getElementById('memoryMorning');
+    let storyStep=0;
+    const labels=['TAP: ROUND TWO','TAP: LAST CALL','TAP: TOMORROW','SWIPE: THE BUSINESS'];
+    function renderStory(){
+      storyPanels.forEach((p,i)=>p.classList.toggle('active',i===storyStep));
+      memoryNight.classList.toggle('active',storyStep<3);
+      memoryMorning.classList.toggle('active',storyStep===3);
+      storyNextText.textContent=labels[storyStep];
+    }
+    storyNext.addEventListener('click',(e)=>{
+      e.stopPropagation();
+      if(storyStep<3){storyStep++;renderStory();}
+      else{deck.scrollTo({left:deck.clientWidth*2,behavior:'smooth'});}
+    });
+    renderStory();
   </script>
 </body>
 </html>
