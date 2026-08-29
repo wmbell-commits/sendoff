@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="theme-color" content="#05080d">
+  <title>SendOff | 60-Second Bar Owner Pitch</title>
+  <meta name="description" content="The SendOff 60-second vision for bars and venues.">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="pitch.css">
+</head>
+<body class="pitch-body">
+  <header class="pitch-header"><a href="../"><img src="../sendoff-wordmark.png" alt="SendOff"></a><span>60-SECOND BAR PITCH</span></header>
+  <main class="pitch-deck" id="deck">
+    <section class="pitch-slide slide-one" aria-label="Slide 1: Brand vision">
+      <img class="slide-bg" src="../chuck-night.jpeg" alt="A fun real-life night out">
+      <div class="slide-shade"></div>
+      <div class="slide-content">
+        <p class="pitch-kicker">SLIDE 1 · THE IDEA</p>
+        <h1>Every great night<br>needs a <span>SendOff.</span></h1>
+        <p class="pitch-lead">Don't wait until closing time to talk about hydration. Make it part of the night.</p>
+        <div class="micro-stages"><b>01 KEEP GOING</b><b>02 ROUND TWO</b><b>03 THE SENDOFF</b></div>
+        <p class="tap-note">Swipe →</p>
+      </div>
+    </section>
+
+    <section class="pitch-slide slide-two" aria-label="Slide 2: Memorable brand story">
+      <div class="memory-split"><img src="../chuck-night.jpeg" alt="Tonight"><img src="../chuck-tomorrow.jpeg" alt="Tomorrow"></div>
+      <div class="slide-shade soft"></div>
+      <div class="slide-content bottom-copy">
+        <p class="pitch-kicker">SLIDE 2 · THE MEMORY</p>
+        <h2>The night is only<br><span>half the story.</span></h2>
+        <p class="pitch-lead">SendOff connects the fun people remember with the tomorrow they still want to show up for.</p>
+        <div class="signature-line"><span>GOOD NIGHTS.</span><strong>BETTER MORNINGS.</strong></div>
+      </div>
+    </section>
+
+    <section class="pitch-slide slide-three" aria-label="Slide 3: Business opportunity">
+      <div class="numbers-layout">
+        <div class="numbers-copy">
+          <p class="pitch-kicker">SLIDE 3 · THE BUSINESS</p>
+          <h2>Put your bar's numbers<br><span>into the idea.</span></h2>
+          <p>SendOff creates up to three natural beverage moments in the same customer journey. Use the calculator below for an illustrative retail-sales scenario.</p>
+          <div class="founder-chip"><img src="../sendoff-logo.png" alt="SendOff"><div><b>Founder-led by Chuck Bell</b><span>Sales · Retail · Hospitality · Events</span></div></div>
+        </div>
+        <div class="calc-card">
+          <label>Guests per night <input id="guests" type="number" min="0" value="100" inputmode="numeric"></label>
+          <label>SendOff adoption <span><input id="conversion" type="number" min="0" max="100" value="20" inputmode="decimal">%</span></label>
+          <label>Avg. bottles per buyer <input id="bottles" type="number" min="0" step="0.1" value="1.5" inputmode="decimal"></label>
+          <label>Retail price / bottle <span>$<input id="price" type="number" min="0" step="0.25" value="5" inputmode="decimal"></span></label>
+          <label>Open nights / month <input id="nights" type="number" min="0" max="31" value="30" inputmode="numeric"></label>
+          <div class="result-grid"><div><span>Projected bottles / night</span><strong id="nightBottles">30</strong></div><div><span>Illustrative sales / night</span><strong id="nightSales">$150</strong></div><div class="full"><span>Illustrative monthly retail sales</span><strong id="monthSales">$4,500</strong></div></div>
+          <small>Illustrative scenario only—not a sales forecast or profit estimate. Actual adoption, pricing, costs and margins will vary.</small>
+          <a class="pitch-cta" href="mailto:charles@sendoffdrink.com?subject=I%20Want%20to%20Pilot%20SendOff%20at%20My%20Bar">LET'S TEST SENDOFF HERE</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="pitch-dots" aria-hidden="true"><i class="active"></i><i></i><i></i></div>
+  <script>
+    const deck=document.getElementById('deck'), dots=[...document.querySelectorAll('.pitch-dots i')];
+    const updateDots=()=>{const i=Math.round(deck.scrollLeft/deck.clientWidth);dots.forEach((d,n)=>d.classList.toggle('active',n===i));};
+    deck.addEventListener('scroll',()=>requestAnimationFrame(updateDots),{passive:true});
+    const ids=['guests','conversion','bottles','price','nights'];
+    const fmt=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n);
+    const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
+    function calc(){const g=+guests.value||0,c=(+conversion.value||0)/100,b=+bottles.value||0,p=+price.value||0,n=+nights.value||0;const qty=g*c*b;nightBottles.textContent=fmt(qty);nightSales.textContent=money(qty*p);monthSales.textContent=money(qty*p*n)}
+    ids.forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+  </script>
+</body>
+</html>
