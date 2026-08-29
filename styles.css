@@ -27,3 +27,128 @@ header nav a[href^="#"].active:after,header nav a[href^="#"]:hover:after{transfo
 footer img{width:min(280px,70vw);height:auto;object-fit:contain}
 @media(max-width:850px){html{scroll-padding-top:80px}section[id],main[id]{scroll-margin-top:80px}.brand{min-width:120px}.brand img{width:120px}.hero-mascot{height:auto;min-height:500px}.partner-image.image-showcase,.retail-image.image-showcase{min-height:0;padding:18px}.partner-image.image-showcase img,.retail-image.image-showcase img{height:auto;max-height:none}.experience-grid .image-showcase{min-height:0}.experience-grid .image-showcase img{height:auto;max-height:none;padding:8px 8px 62px}.memory-photos figure{min-height:0}.memory-photos img{height:auto;max-height:620px}}
 @media(max-width:520px){html{scroll-padding-top:76px}section[id],main[id]{scroll-margin-top:76px}.brand img{width:112px}.hero-mascot{min-height:0;height:auto;aspect-ratio:4/5;padding:12px}.memory-photos figure{min-height:0;aspect-ratio:auto}.memory-photos img{width:100%;height:auto;max-height:none}.floating-owner{bottom:12px}.connect{padding-bottom:120px}footer{padding-bottom:95px}}
+
+
+/* ===== FINAL ALIGNMENT + FOR-BARS IMAGE POLISH ===== */
+:root{--site-header:76px}
+html{scroll-padding-top:var(--site-header)}
+main>section[id],main[id],#founder{scroll-margin-top:var(--site-header)}
+nav a.active{color:#ff7a3e}
+.partner-section{align-items:stretch;min-height:calc(100svh - var(--site-header))}
+.partner-image{
+  min-height:0!important;
+  padding:clamp(28px,4vw,64px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at 50% 44%,#14243a 0,#090e15 58%,#05080d 100%);
+  overflow:hidden;
+}
+.partner-image img{
+  width:100%!important;
+  height:auto!important;
+  max-width:760px;
+  max-height:760px;
+  object-fit:contain!important;
+  object-position:center!important;
+  display:block;
+  border-radius:18px;
+  box-shadow:0 24px 70px rgba(0,0,0,.38);
+}
+.partner-copy{min-width:0}
+.founder-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* ===== CHUCK / FOUNDER PAGE ===== */
+.chuck-page{background:#05080d}
+.chuck-page header{position:sticky;top:0}
+.chuck-hero{
+  min-height:calc(100svh - var(--site-header));
+  padding:clamp(68px,8vw,120px) max(24px,7vw);
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:7vw;
+  align-items:center;
+  background:linear-gradient(135deg,#07111d 0,#090d13 50%,#160a05 100%);
+}
+.chuck-hero-copy h1{
+  font-size:clamp(3.8rem,8vw,8.3rem);
+  line-height:.86;
+  letter-spacing:-.065em;
+  margin:14px 0 26px;
+  text-transform:uppercase;
+}
+.chuck-hero-copy h1 span{color:#ff6320}
+.chuck-hero-copy>p:not(.eyebrow){max-width:700px;color:#b8c2cf;font-size:1.12rem}
+.chuck-hero-art{
+  border:1px solid #2b3849;
+  border-radius:26px;
+  padding:18px;
+  background:#080d14;
+  box-shadow:0 30px 90px rgba(0,0,0,.5);
+}
+.chuck-hero-art img{width:100%;height:auto;display:block;border-radius:18px;object-fit:contain}
+.chuck-proof{
+  padding:100px max(24px,8vw);
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:7vw;
+  background:#f5efe5;
+  color:#111820;
+}
+.chuck-proof .eyebrow{color:#a93708}
+.chuck-proof h2,.career-heading h2,.chuck-method h2{
+  font-size:clamp(2.7rem,5vw,5.2rem);
+  line-height:.95;
+  letter-spacing:-.05em;
+  margin:12px 0 20px;
+}
+.chuck-proof p{color:#4f5964;font-size:1.06rem}
+.proof-card{
+  border-left:5px solid #ff6320;
+  padding:20px 0 20px 26px;
+  font-size:clamp(1.45rem,2.7vw,2.4rem)!important;
+  line-height:1.15;
+  font-weight:900;
+  color:#111820!important;
+}
+.career-section{padding:100px max(24px,8vw);background:#070b11}
+.career-heading{max-width:900px;margin-bottom:42px}
+.career-heading p:last-child{color:#9eabba}
+.career-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.career-card{padding:30px;border:1px solid #243244;border-radius:20px;background:#0a1018}
+.career-card .career-date{font-size:.65rem;letter-spacing:.16em;color:#6fbbff;font-weight:950}
+.career-card:nth-child(even) .career-date{color:#ff8d59}
+.career-card h3{font-size:1.6rem;margin:8px 0 12px}
+.career-card p{color:#9fabb9}
+.career-card ul{padding-left:18px;color:#c0c9d4}
+.career-card li{margin:8px 0}
+.chuck-method{
+  padding:100px max(24px,8vw);
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:7vw;
+  background:linear-gradient(135deg,#07121e,#101014 58%,#190b06);
+}
+.method-list{display:grid;gap:12px}
+.method-list div{padding:20px;border:1px solid #283548;border-radius:16px;background:#080d14}
+.method-list strong{display:block;color:#fff;font-size:1.08rem}
+.method-list span{display:block;color:#91a0b1;margin-top:5px}
+.chuck-close{text-align:center;padding:100px max(24px,8vw);background:#05080d}
+.chuck-close h2{font-size:clamp(2.8rem,6vw,6rem);line-height:.9;letter-spacing:-.055em;margin:12px auto 22px;max-width:980px}
+.chuck-close p{max-width:720px;margin:0 auto;color:#a9b4c2}
+
+@media(max-width:850px){
+  .partner-section{min-height:auto}
+  .partner-image{padding:28px 24px}
+  .partner-image img{max-height:none}
+  .chuck-hero,.chuck-proof,.chuck-method{grid-template-columns:1fr}
+  .chuck-hero-art{max-width:720px}
+  .career-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  :root{--site-header:66px}
+  .partner-image{padding:22px 18px}
+  .founder-actions .button{width:100%}
+  .chuck-hero,.chuck-proof,.career-section,.chuck-method,.chuck-close{padding:72px 20px}
+  .chuck-hero-copy h1{font-size:3.6rem}
+}
